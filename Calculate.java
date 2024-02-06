@@ -13,10 +13,12 @@ public class Calculate {
 
         System.out.println("What is your gross salary?");
         double grossSalary = sal.nextDouble();
-        if (grossSalary < 0){
+        
+        while (grossSalary < 0){
             System.out.println("Invalid salary, enter correct salary");
+            grossSalary = sal.nextDouble();
         }
-        else if (grossSalary <= 237100){
+        if (grossSalary <= 237100){
             taxCharged = (grossSalary*0.18);
 
             NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(new Locale("en", "ZA"));
